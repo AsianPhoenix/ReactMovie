@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Movie from "../models/Movie";
 import { getTrendingMovies } from "../services/TMDBService";
+import Card from "./Card";
 import "./GalleryRoute.css";
 
 const GalleryRoute = () => {
@@ -12,7 +13,15 @@ const GalleryRoute = () => {
     });
   }, []);
 
-  return <div className="GalleryRoute"></div>;
+  return (
+    <div className="GalleryRoute">
+      <ul>
+        {movies.map((movie) => (
+          <Card movie={movie} />
+        ))}
+      </ul>
+    </div>
+  );
 };
 
 export default GalleryRoute;
