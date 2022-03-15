@@ -1,5 +1,6 @@
 import "./Header.css";
 import SearchBar from "./SearchBar";
+import Filters from "./Filters";
 
 const Header = () => {
   return (
@@ -7,6 +8,7 @@ const Header = () => {
       <h1>What's Good?</h1>
       <div>
         <SearchBar />
+        <Filters />
       </div>
     </header>
   );

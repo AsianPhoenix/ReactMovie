@@ -2,6 +2,7 @@ import axios from "axios";
 import Params from "../models/Params";
 import GeneralTMDBResponse from "../models/GeneralTMDBResponse";
 import GenreResponse from "../models/GenreResponse";
+import Movie from "../models/Movie";
 
 const key: string = process.env.REACT_APP_TMDB_KEY || "";
 
@@ -38,6 +39,14 @@ export const getMoviesBySearchTerm = (
   return axios
     .get("https://api.themoviedb.org/3/search/movie", {
       params: { api_key: key, query },
+    })
+    .then((response) => response.data);
+};
+
+export const getMovieById = (id: string): Promise<Movie> => {
+  return axios
+    .get(`https://api.themoviedb.org/3/movie/${encodeURIComponent(id)}`, {
+      params: { api_key: key },
     })
     .then((response) => response.data);
 };
