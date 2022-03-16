@@ -1,7 +1,18 @@
+import { useContext } from "react";
+import WatchlistContext from "../context/WatchlistContext";
+import Movie from "../models/Movie";
+import Card from "./Card";
 import "./WatchListRoute.css";
 
 const WatchListRoute = () => {
-  return <div className="WatchListRoute">WatchListRoute works</div>;
+  const { watchlist } = useContext(WatchlistContext);
+  return (
+    <div className="WatchListRoute">
+      {watchlist.map((movie: Movie) => (
+        <Card movie={movie} key={movie.id} />
+      ))}
+    </div>
+  );
 };
 
 export default WatchListRoute;
