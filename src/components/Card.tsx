@@ -9,11 +9,16 @@ interface Props {
 
 const Card = ({ movie }: Props) => {
   const { addMovie, removeMovie, isFav } = useContext(WatchlistContext);
+  console.log(movie);
   return (
     <li className="Card">
-      <Link to={`/movies/${encodeURIComponent(movie.id)}/details`}>
-        <p>{movie.original_title}</p>
+      <Link
+        to={`/movies/${encodeURIComponent(movie.id)}/details`}
+        style={{ textDecoration: "none", color: "black" }}
+      >
+        <p className="movieTitle">{movie.original_title}</p>
         <img
+          className="moviePoster"
           src={`https://www.themoviedb.org/t/p/w220_and_h330_face${movie.poster_path}`}
           alt={movie.original_title}
         />

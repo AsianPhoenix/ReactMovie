@@ -1,0 +1,12 @@
+p.movieTitle {
+  color: black;
+  font-weight: bolder;
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
+    1px 1px 0 #fff;
+}
+
+.moviePoster {
+  border: solid black 3px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 3) 0px 3px 10px;
+}

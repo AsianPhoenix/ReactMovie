@@ -12,11 +12,12 @@ const SearchBar = () => {
 
   return (
     <form className="SearchBar" onSubmit={(e) => submitHandler(e)}>
-      <label htmlFor="searchTerm">Search for a Movie or TV Show</label>
+      <label htmlFor="searchTerm"></label>
       <input
         type="text"
         name="searchTerm"
         id="searchTerm"
+        placeholder="Search for a Movie or Tv Show"
         value={term}
         onChange={(e) => setTerm(e.target.value)}
       />

@@ -1,0 +1,13 @@
+.GalleryRoute {
+  background: white;
+}
+
+.mobileTitle {
+  font-family: "Rum Raisin", sans-serif;
+}
+
+ul {
+  font-family: "Abel", sans-serif;
+  list-style: none;
+  font-size: 24px;
+}
