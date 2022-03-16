@@ -3,6 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import Genre from "../models/Genre";
 import Movie from "../models/Movie";
 import {
+  discoverMovies,
   getGenres,
   getMoviesBySearchTerm,
   getTrendingMovies,
@@ -12,12 +13,11 @@ import "./GalleryRoute.css";
 
 const GalleryRoute = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
-  const [genres, setGenres] = useState<Genre[]>([]);
+
   const [searchParams] = useSearchParams();
-  const [queryStringParams] = useSearchParams();
+  const genre = searchParams.get("with_genres");
+  const voteAvg = searchParams.get("vote_average.gte");
   const searchTerm = searchParams.get("term");
-  const params = queryStringParams.get("...queryStringParams");
-  //   console.log(searchTerm);
 
   useEffect(() => {
     if (searchTerm) {
@@ -25,16 +25,19 @@ const GalleryRoute = () => {
       getMoviesBySearchTerm(searchTerm).then((response) => {
         setMovies(response.results);
       });
-    } else if (params) {
-      getGenres().then((response) => {
-        setGenres(response.genres);
+    } else if (genre || voteAvg) {
+      discoverMovies({
+        with_genres: genre!,
+        "vote_average.gte": voteAvg!,
+      }).then((response) => {
+        setMovies(response.results);
       });
     } else
       getTrendingMovies().then((response) => {
         setMovies(response.results);
         console.log(response.results);
       });
-  }, [searchTerm]);
+  }, [searchTerm, voteAvg, genre]);
 
   return (
     <div className="GalleryRoute">
