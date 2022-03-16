@@ -1,0 +1,14 @@
+Header h1 {
+  display: none;
+}
+
+Header {
+  background-color: grey;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Rum Raisin", sans-serif;
+}

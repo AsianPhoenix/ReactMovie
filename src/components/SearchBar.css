@@ -1,0 +1,20 @@
+#searchTerm {
+  width: 250px;
+  height: 15px;
+}
+
+form button:hover {
+  cursor: pointer;
+}
+
+form input:hover {
+  cursor: pointer;
+}
+
+form input,
+button {
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 7px;
+}

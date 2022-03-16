@@ -10,7 +10,7 @@ const Header = () => {
       <div>
         <SearchBar />
         <Filters />
-        <Link to="/movies/watchlist">
+        <Link to="/movies/watchlist" style={{ textDecoration: "none" }}>
           <p>Watchlist</p>
         </Link>
       </div>

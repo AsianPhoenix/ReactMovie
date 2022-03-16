@@ -41,9 +41,10 @@ const GalleryRoute = () => {
 
   return (
     <div className="GalleryRoute">
+      <h1 className="mobileTitle">What's Good?</h1>
       <ul>
         {movies.map((movie) => (
-          <Card movie={movie} />
+          <Card movie={movie} key={movie.id} />
         ))}
       </ul>
     </div>
