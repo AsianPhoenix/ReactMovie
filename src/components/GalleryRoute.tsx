@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
+import Genre from "../models/Genre";
 import Movie from "../models/Movie";
 import {
+  getGenres,
   getMoviesBySearchTerm,
   getTrendingMovies,
 } from "../services/TMDBService";
@@ -10,9 +12,11 @@ import "./GalleryRoute.css";
 
 const GalleryRoute = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
-
+  const [genres, setGenres] = useState<Genre[]>([]);
   const [searchParams] = useSearchParams();
+  const [queryStringParams] = useSearchParams();
   const searchTerm = searchParams.get("term");
+  const params = queryStringParams.get("...queryStringParams");
   //   console.log(searchTerm);
 
   useEffect(() => {
@@ -20,6 +24,10 @@ const GalleryRoute = () => {
       //   console.log(searchTerm);
       getMoviesBySearchTerm(searchTerm).then((response) => {
         setMovies(response.results);
+      });
+    } else if (params) {
+      getGenres().then((response) => {
+        setGenres(response.genres);
       });
     } else
       getTrendingMovies().then((response) => {
