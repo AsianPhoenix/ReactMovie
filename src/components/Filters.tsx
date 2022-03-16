@@ -34,6 +34,7 @@ const Filters = () => {
         id="genres"
         onChange={(e) => setGenre(e.target.value)}
       >
+        <option value="all">All</option>
         {genres.map((genre) => (
           <option value={genre.id} key={genre.id}>
             {genre.name}

@@ -1,6 +1,7 @@
 import "./Header.css";
 import SearchBar from "./SearchBar";
 import Filters from "./Filters";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -9,6 +10,9 @@ const Header = () => {
       <div>
         <SearchBar />
         <Filters />
+        <Link to="/movies/watchlist">
+          <p>Watchlist</p>
+        </Link>
       </div>
     </header>
   );
