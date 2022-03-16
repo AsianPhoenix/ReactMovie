@@ -10,6 +10,8 @@ export const discoverMovies = (
   newParams: Params
 ): Promise<GeneralTMDBResponse> => {
   newParams.api_key = key;
+  console.log(newParams);
+
   return axios
     .get("https://api.themoviedb.org/3/discover/movie", {
       params: newParams,
