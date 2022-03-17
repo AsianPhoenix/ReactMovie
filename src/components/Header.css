@@ -12,27 +12,40 @@ Header {
   justify-content: center;
   font-family: "Rum Raisin", sans-serif;
 }
+.watchlist {
+  font-size: 30px;
+}
 
+.fa-solid {
+  margin-top: 40px;
+}
 @media only screen and (min-width: 768px) {
   Header {
     top: 0;
     bottom: revert;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    align-items: revert;
   }
   Header h1 {
     display: block;
-    flex: 1;
+    font-size: 90px;
+    margin-top: 80px;
     margin-left: 80px;
   }
   .headerDiv {
     display: flex;
     justify-content: stretch;
-    flex: 2;
+    width: 50%;
   }
   .containerSearchandFilter {
-    display: flex;
     margin-top: 40px;
+  }
+  p.watchlist {
+    margin-top: 120px;
+    margin-left: 100px;
+    padding-bottom: 5px;
+  }
+  .fa-solid {
+    margin-top: 120px;
   }
 }
