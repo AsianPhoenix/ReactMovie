@@ -1,22 +1,23 @@
 import "./Header.css";
 import SearchBar from "./SearchBar";
 import Filters from "./Filters";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 
 const Header = () => {
-  // const id: string | undefined = useParams().id;
-  // console.log(useParams());
+  const location = useLocation().pathname;
 
   return (
     <header className="Header">
-      <h1>What's Good?</h1>
+      <Link to="/movies" style={{ textDecoration: "none" }}>
+        <h1>What's Good?</h1>
+      </Link>
       <div className="headerDiv">
-        {/* {!id && ( */}
-        <div className="containerSearchandFilter">
-          <SearchBar />
-          <Filters />
-        </div>
-        {/* // )} */}
+        {!location.includes("details") && !location.includes("watchlist") && (
+          <div className="containerSearchandFilter">
+            <SearchBar />
+            <Filters />
+          </div>
+        )}
         <Link
           to="/movies/watchlist"
           style={{ textDecoration: "none", display: "flex" }}

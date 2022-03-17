@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import Genre from "../models/Genre";
 import Movie from "../models/Movie";
 import {
@@ -58,7 +58,9 @@ const GalleryRoute = () => {
 
   return (
     <div className="GalleryRoute">
-      <h1 className="mobileTitle">What's Good?</h1>
+      <Link to="/movies" style={{ textDecoration: "none" }}>
+        <h1 className="mobileTitle">What's Good?</h1>
+      </Link>
       <h2>{trendingFlag ? "Trending" : ""}</h2>
       <ul>
         {movies.map((movie) => (
