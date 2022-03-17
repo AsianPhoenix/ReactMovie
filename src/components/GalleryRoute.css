@@ -1,5 +1,8 @@
 .GalleryRoute {
   background: white;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .mobileTitle {
@@ -10,4 +13,16 @@ ul {
   font-family: "Abel", sans-serif;
   list-style: none;
   font-size: 24px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media only screen and (min-width: 768px) {
+  .mobileTitle {
+    display: none;
+  }
+
+  ul {
+    margin-top: 200px;
+  }
 }

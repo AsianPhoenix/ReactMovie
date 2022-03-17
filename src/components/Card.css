@@ -1,9 +1,25 @@
+.Card {
+  list-style: none;
+}
+
 p.movieTitle {
   color: black;
   font-weight: bolder;
   text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
     1px 1px 0 #fff;
+  padding: 5px;
+  margin: 10px 0px;
+  height: 50px;
+  width: 200px;
 }
+
+p.notFound + img {
+  display: none;
+}
+
+/* p.notFound {
+  display: none;
+} */
 
 .moviePoster {
   border: solid black 3px;

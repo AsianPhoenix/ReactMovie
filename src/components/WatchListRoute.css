@@ -1,0 +1,7 @@
+.WatchListRoute {
+  font-family: "Abel", sans-serif;
+  list-style: none;
+  font-size: 24px;
+  display: flex;
+  flex-wrap: wrap;
+}

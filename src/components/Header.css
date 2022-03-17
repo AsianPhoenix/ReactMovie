@@ -12,3 +12,27 @@ Header {
   justify-content: center;
   font-family: "Rum Raisin", sans-serif;
 }
+
+@media only screen and (min-width: 768px) {
+  Header {
+    top: 0;
+    bottom: revert;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  Header h1 {
+    display: block;
+    flex: 1;
+    margin-left: 80px;
+  }
+  .headerDiv {
+    display: flex;
+    justify-content: stretch;
+    flex: 2;
+  }
+  .containerSearchandFilter {
+    display: flex;
+    margin-top: 40px;
+  }
+}
