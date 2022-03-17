@@ -17,8 +17,12 @@ const Header = () => {
           <Filters />
         </div>
         {/* // )} */}
-        <Link to="/movies/watchlist" style={{ textDecoration: "none" }}>
-          <p>Watchlist</p>
+        <Link
+          to="/movies/watchlist"
+          style={{ textDecoration: "none", display: "flex" }}
+        >
+          <p className="watchlist">Watchlist</p>
+          <i className="fa-solid fa-star"></i>
         </Link>
       </div>
     </header>

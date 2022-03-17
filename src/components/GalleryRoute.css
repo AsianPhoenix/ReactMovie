@@ -17,12 +17,20 @@ ul {
   flex-wrap: wrap;
 }
 
+h2 {
+  font-family: "Abel", sans-serif;
+}
+
 @media only screen and (min-width: 768px) {
   .mobileTitle {
     display: none;
   }
 
-  ul {
+  .GalleryRoute h2 {
     margin-top: 200px;
+  }
+
+  .GalleryRoute ul {
+    margin-top: 20px;
   }
 }
