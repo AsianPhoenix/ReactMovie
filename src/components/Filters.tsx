@@ -43,6 +43,7 @@ const Filters = () => {
       </select>
       <label htmlFor="voteAvg">Minimum Rating</label>
       <select
+        aria-label="min-Rating"
         className="voteAverage"
         id="voteAverage"
         onChange={(e) => setVoteAvg(e.target.value)}

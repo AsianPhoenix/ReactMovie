@@ -33,13 +33,3 @@ test("renders movie link to details page", () => {
   });
   expect(linkToDetails).toBeInTheDocument();
 });
-
-// test("renders movie by ID", () => {
-//   render(
-//     <BrowserRouter>
-//       <Card movie={testMovie} />
-//     </BrowserRouter>
-//   );
-//   const titleID = screen.getByTestId("123");
-//   expect(titleID).toBeInTheDocument();
-// });
