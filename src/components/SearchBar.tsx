@@ -12,6 +12,7 @@ const SearchBar = () => {
 
   return (
     <form className="SearchBar" onSubmit={(e) => submitHandler(e)}>
+      <p>{term}</p>
       <label htmlFor="searchTerm"></label>
       <input
         type="text"
